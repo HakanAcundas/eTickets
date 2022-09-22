@@ -10,6 +10,8 @@ namespace eTickets.Controllers
     public class ActorsController : Controller
     {
         private AppDbContext appDbContext;
+        const string actorView = "~/Views/Actors/Index.cshtml";
+
         public ActorsController(AppDbContext _appDbContext)
         {
             appDbContext = _appDbContext;
@@ -18,7 +20,7 @@ namespace eTickets.Controllers
         public ActionResult Index()
         {
             var data = appDbContext.TBL_ACTORS.ToList();
-            return View(data);
+            return View(actorView, data);
         }
 
         //Get: Actors/CreateActor

@@ -15,7 +15,7 @@
                     <th>@Html.DisplayNameFor(model => model.Bio)</th>
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
-                    <th>Actions</th>
+                    <th>Actions</th>    
                     }
                 </tr>
             </thead>
