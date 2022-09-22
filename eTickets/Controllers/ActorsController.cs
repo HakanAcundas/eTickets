@@ -14,10 +14,16 @@ namespace eTickets.Controllers
         {
             appDbContext = _appDbContext;
         }
-
-        public IActionResult Index()
+        
+        public ActionResult Index()
         {
             var data = appDbContext.TBL_ACTORS.ToList();
+            return View(data);
+        }
+
+        //Get: Actors/CreateActor
+        public async Task<IActionResult> CreateActor()
+        {
             return View();
         }
     }
